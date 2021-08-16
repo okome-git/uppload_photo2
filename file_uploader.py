@@ -53,7 +53,7 @@ if submit_button == True:
         img.save("./uploaded/" + name )
         st.write(comment)
         s3 = boto3.resource('s3') #S3オブジェクトを取得
-        bucket = s3.Bucket('tatemizo')
+        bucket = s3.Bucket('photocontest')
         bucket.upload_file("./uploaded/" + name, name)
         os.remove("./uploaded/" + name)
 
