@@ -1,18 +1,24 @@
 import streamlit as st
 from PIL import Image
-import numpy as np
 import boto3
-import s3fs
 import os
+iport time
 
 st.set_page_config(
     page_title = 'Photo Upload',
     page_icon = '📷',
 )
 
-# st.write(st.secrets["AWS_ACCESS_KEY_ID"])
-# st.write(st.secrets["AWS_SECRET_ACCESS_KEY"])
-# fs = s3fs.S3FileSystem(anon=False)
+pre_password = "photocon2021"
+input_password = st.text_input("パスワード", help="事前に事務局より通知された12桁以内のパスワードを入力してください", value="", type="password")
+
+if str(pre_password) != str(input_password):
+    st.warning('写真を投稿するにはパスワードを入力してください')
+    st.stop()
+    
+tempo = st.success('認証成功')
+time.sleep(1)
+tempo.balloons()
 
 s3 = boto3.client('s3',
         aws_access_key_id= st.secrets["AWS_ACCESS_KEY_ID"],
