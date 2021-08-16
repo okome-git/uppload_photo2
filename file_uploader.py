@@ -37,7 +37,8 @@ st.write(
 with st.form(key='my_form'):
     st.write("画像ファイルをアップロードしてください。（png、jpeg、jpg形式のみ対応しています。）")
     uploaded_file =  st.file_uploader("ファイルアップロード", type=['png','jpeg','jpg'])
-    sales_id = st.text_input(label='社員番号を半角で入力してください')    
+    sales_id = st.text_input(label='社員番号を半角で入力してください')
+    department = st.selectbox(("計測制御","IA3"))
     nick_name = st.text_input(label='ニックネームを入力してください（任意）') 
     comment = st.text_area('写真に対するコメントを入力してください')
     submit_button = st.form_submit_button(label='提出')
