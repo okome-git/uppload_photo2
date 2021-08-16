@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 import boto3
 import os
-iport time
+import time
 
 st.set_page_config(
     page_title = 'Photo Upload',
