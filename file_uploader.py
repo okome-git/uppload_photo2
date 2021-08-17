@@ -9,7 +9,7 @@ st.set_page_config(
     page_icon = '📷',
 )
 
-pre_password = "photocon2021"
+pre_password = st.secrets["PRE_PASSWORD"]
 input_password = st.text_input("パスワード", help="事前に事務局より通知された12桁以内のパスワードを入力してください", value="", type="password")
 
 if str(pre_password) != str(input_password):
