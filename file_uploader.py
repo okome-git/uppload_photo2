@@ -10,7 +10,7 @@ st.set_page_config(
 )
 
 pre_password = st.secrets["PRE_PASSWORD"]
-input_password = st.text_input("パスワード", help="事前に事務局より通知された12桁以内のパスワードを入力してください", value="", type="password")
+input_password = st.text_input("パスワード", help="事前に事務局より通知されたパスワードを半角英数字で入力してください", value="", type="password")
 
 if str(pre_password) != str(input_password):
     st.warning('写真を投稿するにはパスワードを入力してください')
