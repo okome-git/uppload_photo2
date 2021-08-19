@@ -41,7 +41,7 @@ with st.form(key='my_form'):
     department = st.selectbox("部署を選んでください。",("計測制御","IA3"))
     nick_name = st.text_input(label='ニックネームを入力してください（任意）')
     img_type = st.selectbox("提出先の部門を選択してください",("風景","生き物","AIが間違えるか","ステイホーム","買ってよかったもの","映え"))
-    img_title = st.text_area('写真のタイトルを入力してください')
+    img_title = st.text_input('写真のタイトルを入力してください')
     comment = st.text_area('写真に対するコメントを入力してください')
     submit_button = st.form_submit_button(label='提出')
 
